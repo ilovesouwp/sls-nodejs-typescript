@@ -5,8 +5,8 @@ test("Test add 1", () => {
 });
 
 test("Test add 2", () => {
-    expect(add(10, 11)).toBe(21);
-})
+    expect(add(10, 11)).toBe(-1);
+});
 
 describe("test add 2", () => {
     it("it should return 5", () => {
