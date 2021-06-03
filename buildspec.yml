@@ -4,12 +4,21 @@ phases:
     runtime-versions:
       nodejs: 12.x
     commands:
-      - echo Install phase
+      - npm install -g serverless
+      - npm install
+      - npm run eslint
+      - npm run test
 
   pre_build:
     commands:
-      - echo Pre-build phase
+      - echo "pre-build phase"
 
   build:
     commands:
-      - echo Build phase
+      - 'SLS_DEBUG=* sls deploy -v --stage dev --region us-east-2'
+
+  post_build:
+    commands:
+      - echo "post build"
+
+  
